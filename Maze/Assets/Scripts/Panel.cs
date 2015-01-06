@@ -34,6 +34,11 @@ public class Panel : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter(Collider other) {
+		Debug.Log ("Entered Panel");
+		myType = PanelType.PanelOne;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (oldType != myType) {

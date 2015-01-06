@@ -167,10 +167,10 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="tk2dExternal">
- <HintPath>C:/Users/museless/Documents/GitHub/gamedays/Maze/Assets/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
+ <HintPath>C:/Users/Ben/Documents/GitHub/gamedays/Maze/Assets/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
  </Reference>
  <Reference Include="tk2dSkin">
- <HintPath>C:/Users/museless/Documents/GitHub/gamedays/Maze/Assets/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
+ <HintPath>C:/Users/Ben/Documents/GitHub/gamedays/Maze/Assets/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

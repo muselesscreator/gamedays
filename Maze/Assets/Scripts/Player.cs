@@ -12,40 +12,57 @@ public class Player : MonoBehaviour {
 	public float speed;
 	public float startTime;
 	public float journeyLength;
+
+	public Vector3 down;
+	public Vector3 right;
 	// Use this for initialization
 	
 	void Start () {
 		theBoard = GameObject.Find ("GameController").GetComponent<Board>();
 		anim = GetComponent<Animator>();
 		journeyLength = theBoard.size;
+		down = new Vector3 (0, 0, 90);
+		right = new Vector3 (90, 0, 0);
+		theBoard.activate = true;
 	}
 
+
+
 	void Move (float h, float v) {
-		Debug.Log (h + " " + v);
-
 		if (isWalking == false && Math.Abs (h+v) > 0) {
+			int[] newPosition = new int[2];
 			startTime = Time.time;
-
-			anim.SetBool("isWalking", true);
-
+			Vector3 movement = new Vector3();
 			if (Math.Abs(h) > 0f) {
-				h = -h;
-				if (position[0] - h >= 0 && position[0] - h < theBoard.rows) {
-					isWalking = true;
-					targetPosition.Set(h, 0f, 0f);
-					position[0] -= (int) h;
-				}
+				transform.rigidbody.MoveRotation(Quaternion.LookRotation (right * h));
+				newPosition = new int[2] {position[0], position[1] + (int) h};
+				movement.Set(h, 0f, 0f);
 			}
-
 			else if (Math.Abs (v) > 0f) {
-				if (position[1] + v >= 0 && position[1] + v < theBoard.cols) {
+				transform.rigidbody.MoveRotation(Quaternion.LookRotation (down * v));
+				newPosition = new int[2] {position[0] + (int) v, position[1]};
+				movement.Set(0f, 0f, v);
+
+			}
+			if (theBoard.isValid(newPosition)) {
+				if (theBoard.getPanel (newPosition).myType == Panel.PanelType.Default) {
 					isWalking = true;
-					targetPosition.Set(0f, 0f, v);
-					position[1] += (int) v;
+					anim.SetBool("isWalking", true);
+					position = newPosition;
+				}
+				else {
+					Debug.Log ("Tried to go over a visited panel at " + newPosition[1] + ", " + newPosition[0]);
+					negAction ();
 				}
 			}
-			targetPosition *= theBoard.size;
-			targetPosition += transform.position;
+			else {
+				Debug.Log ("Tried to move outside the grid to " + newPosition[1] + ", " + newPosition[0]);
+				negAction();
+			}
+			if (isWalking) {
+				movement *= theBoard.size;
+				targetPosition = movement + transform.position;
+			}
 		}
 		if (isWalking) {
 			if (transform.position == targetPosition) {
@@ -60,10 +77,13 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void negAction() {
+		anim.SetTrigger ("negAction");
+	}
+
 	void FixedUpdate() {
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
-		Debug.Log (h + " " + v);
 
 		Move (h, v);
 	}
