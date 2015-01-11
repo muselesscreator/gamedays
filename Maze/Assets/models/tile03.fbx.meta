@@ -11,10 +11,13 @@ ModelImporter:
     400004: tile_05
     2300000: tile_03Hit
     2300002: tile_05
+    2300004: //RootNode
     3300000: tile_03Hit
     3300002: tile_05
+    3300004: //RootNode
     4300000: tile_03Hit
     4300002: tile_05
+    4300004: tile_03
     9500000: //RootNode
   materials:
     importMaterials: 1
