@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
-	public int[] position = new int[2] {0,0};
+	public Vector2 position = new Vector2(0, 0);
 	public Board theBoard;
 	public bool isWalking = false;
 	public Vector3 targetPosition;
@@ -12,51 +14,75 @@ public class Player : MonoBehaviour {
 	public float speed;
 	public float startTime;
 	public float journeyLength;
+	public List<Vector2> path;
 
-	public Vector3 down;
-	public Vector3 right;
+	Vector3 down = new Vector3 (0, 0, 90);
+	Vector3 right = new Vector3 (90, 0, 0);
+
 	// Use this for initialization
 	
 	void Start () {
 		theBoard = GameObject.Find ("GameController").GetComponent<Board>();
 		anim = GetComponent<Animator>();
 		journeyLength = theBoard.size;
-		down = new Vector3 (0, 0, 90);
-		right = new Vector3 (90, 0, 0);
 		theBoard.activate = true;
 	}
 
 
 
-	void Move (float h, float v) {
+	public void Move (float h, float v) {
 		if (isWalking == false && Math.Abs (h+v) > 0) {
-			int[] newPosition = new int[2];
+			Vector2 newPosition = new Vector2();
 			startTime = Time.time;
 			Vector3 movement = new Vector3();
+			newPosition = position;
 			if (Math.Abs(h) > 0f) {
 				transform.rigidbody.MoveRotation(Quaternion.LookRotation (right * h));
-				newPosition = new int[2] {position[0], position[1] + (int) h};
+				newPosition.y += h;
 				movement.Set(h, 0f, 0f);
 			}
 			else if (Math.Abs (v) > 0f) {
 				transform.rigidbody.MoveRotation(Quaternion.LookRotation (down * v));
-				newPosition = new int[2] {position[0] + (int) v, position[1]};
+				newPosition.x += v;
 				movement.Set(0f, 0f, v);
 
 			}
 			if (theBoard.isValid(newPosition)) {
-				if (theBoard.getPanel (newPosition).myType == Panel.PanelType.Default) {
-					isWalking = true;
-					anim.SetBool("isWalking", true);
-					position = newPosition;
+				Panel newPanel = theBoard.getPanel (newPosition);
+				if (newPanel.triggered == false) {
+					bool reqsNotMet = false;
+					if (newPanel.myKey != 0) {
+						for (int i=0; i < newPanel.myKey-1; i++) {
+							if (!theBoard.numPanels[i].activated) {
+								reqsNotMet = true;
+							}
+						}
+						if (!reqsNotMet) {
+							theBoard.getNumPanel(newPanel.myKey).activated = true;
+						}
+					}
+					if (!reqsNotMet){
+						// Actually Walking!
+						isWalking = true;
+						anim.SetBool("isWalking", true);
+						GameObject pathLight = GameObject.Instantiate(Resources.Load("prefabs/PathLight")) as GameObject;
+						pathLight.GetComponent<PathLight>().init(position, transform.rigidbody.rotation);
+
+						if (theBoard.getPanel (position).myKey > 0) {
+							pathLight.GetComponent<PathLight>().bigBeacon.emissionRate = 250f;
+						}
+
+						position = newPosition;
+						Debug.Log ("Moving to (" + position.x + ", " + position.y + ")");
+					}
 				}
 				else {
-					Debug.Log ("Tried to go over a visited panel at " + newPosition[1] + ", " + newPosition[0]);
+					Debug.Log ("Tried to go over a visited panel at " + newPosition.x + ", " + newPosition.y);
 					negAction ();
 				}
 			}
 			else {
-				Debug.Log ("Tried to move outside the grid to " + newPosition[1] + ", " + newPosition[0]);
+				Debug.Log ("Tried to move outside the grid to " + newPosition.x + ", " + newPosition.y);
 				negAction();
 			}
 			if (isWalking) {
