@@ -90,7 +90,8 @@ public class Player : MonoBehaviour {
 						}
 
 						position = newPosition;
-						Debug.Log ("Moving to (" + position.x + ", " + position.y + ")");
+
+						theBoard.getPanel (position).lightUp ();
 					}
 				}
 				else {

@@ -50,6 +50,7 @@ public class Panel : MonoBehaviour {
 		if (theBoard.initializing) {
 			theBoard.startLocation = position;
 			thePlayer.BeAtIJ(position);
+			lightUp ();
 			theBoard.initializing = false;
 		}
 		else if (theBoard.selecting) {
@@ -142,7 +143,8 @@ public class Panel : MonoBehaviour {
 		number.transform.localPosition = new Vector3 (0, .5f, 0);
 		myKey = Int32.Parse (numPanel.number);
 	}
-	
+
+	/*
 	void OnMouseEnter() {
 		Debug.Log ("Drag");
 		if (Input.GetMouseButtonDown(0) && Vector2.Distance (position, thePlayer.position) ==1 ) {
@@ -150,22 +152,14 @@ public class Panel : MonoBehaviour {
 			thePlayer.Move(movement.y, movement.x);
 		}
 	}
-	
-	void setMat(PanelType type) {
-		switch (type) 
-		{
-			case PanelType.Default:
-				renderer.sharedMaterial = theBoard.materials.panelDefault;
-				break;
-			case PanelType.PanelOne:
-				renderer.sharedMaterial = theBoard.materials.panelOne;
-				break;
-			case PanelType.PanelTwo:
-				renderer.sharedMaterial = theBoard.materials.panelTwo;
-			break;
-		}
-	}
+	*/
 
+	public void lightUp() {
+		Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
+		mats[0] = theBoard.materials.brightPanel;
+		GetComponentInChildren<MeshRenderer>().materials = mats;
+	}
+	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
 			triggered = true;
@@ -178,7 +172,6 @@ public class Panel : MonoBehaviour {
 	void Update () {
 		if (oldType != myType) {
 			Debug.Log (myType);
-			setMat(myType);
 			oldType = myType;
 		}
 	}

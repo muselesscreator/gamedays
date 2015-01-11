@@ -7,8 +7,8 @@ using System.Linq;
 [System.Serializable]
 public class PanelMaterials {
 	public Material panelDefault;
-	public Material panelOne;
-	public Material panelTwo;
+	public Material dimPanel;
+	public Material brightPanel;
 }
 
 [ExecuteInEditMode]
@@ -125,7 +125,6 @@ public class Board : MonoBehaviour {
 	}
 
 	public Panel getPanel(Vector2 position) {
-		Debug.Log (position);
 		//x and y are switched here... because
 		if (position.y >= 0 && position.y < m_width) {
 			if (position.x >= 0 && position.x < m_height) {
@@ -193,6 +192,10 @@ public class Board : MonoBehaviour {
 			}
 		}
 
+		if (loadTemplate) {
+			getPanel (startLocation).lightUp();
+		}
+
 		for (int i=0; i<numPanels.Length; i++) {
 			NumPanel numPanel = numPanels[i];
 			if (numPanel.placed) {
@@ -205,7 +208,6 @@ public class Board : MonoBehaviour {
 			getPanel(obstacle).GetComponent<Panel>().makeInvisible();
 		}
 		if (endTile.placed) {
-			Debug.Log (getPanel (endTile.position));
 			getPanel(endTile.position).addExit();
 		}
 		
