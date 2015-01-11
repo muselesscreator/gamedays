@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	
+
 	void Start () {
 		theBoard = GameObject.Find ("GameController").GetComponent<Board>();
 		anim = GetComponent<Animator>();
@@ -28,9 +29,16 @@ public class Player : MonoBehaviour {
 		theBoard.activate = true;
 	}
 
-
+	public void BeAtIJ(Vector2 p) {
+		Vector2 actualLocation = theBoard.ToXY((int) p.x, (int) p.y);
+		transform.localPosition = new Vector3(actualLocation.x, 0f, actualLocation.y);
+		position = p;
+	}
 
 	public void Move (float h, float v) {
+		if (theBoard.initializing)
+			return;
+
 		if (isWalking == false && Math.Abs (h+v) > 0) {
 			Vector2 newPosition = new Vector2();
 			startTime = Time.time;

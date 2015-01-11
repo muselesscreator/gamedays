@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 [System.Serializable]
@@ -12,28 +13,75 @@ public class PanelMaterials {
 
 [ExecuteInEditMode]
 public class Board : MonoBehaviour {
-
+	/* The main class for generating/maintaining the Maze board
+	 * 
+	 * has a number of properties, which can be saved/loaded to/from BoardTemplates
+	 * as well as a number of toggles, allowing the Level designer to tweak elements of the maze
+	 * 
+	 * Parameters:
+	 *  * int m_width: number of panels wide
+	 *  * int m_height: number of panels long
+	 *  * float size: size (in unity3d units (meters)) of a panel
+	 *  * Vector2 start: start location (in (i,j) units) of the player
+	 *  * NumPanels[] numPanels: configuration/controls for the location of number panels
+	 *  * List<Vector2> obstacles: locations for missing tiles
+	 *  * BoardTemplate myTemplate: a BoardTemplate that can be loaded in and activated with .load
+	 * 
+	 * Toggles:
+	 *  * activate: re-generates the board, clears number/obstacle tiles, and sets to initialize
+	 *              (re-place the start point)
+	 *  * save: opens a save prompt to save the current configuration as a BoardTemplate
+	 *  * NumPanel.select: next time you click on a Panel in Play mode, that panel will be associated with 
+	 *                     this numPanel and the associated visual will be displayed
+	 *  * addObstacle: next time you click on a panel, it will be made invisible, and its location will be added as an obstacle
+	 *  * removeObstacle: next time you click on an invisible tile, it will be made visible and removed from the obstacle list
+	 *  * setEndPoint: next time you click on a tile, it will be selected as a new exit tile.
+	 */ 
+	public bool initializing;
 	public bool activate = false;
+	public BoardTemplate myTemplate;
+	public bool loadTemplate;
+
 	public bool save = false;
-	public GameObject panel;
+
+	public bool selecting;
+	public int selecting_index;
+
+	public EndTile endTile;
+	public bool setEndPoint;
+
+	
 	public int m_height;
 	public int m_width;
 	public float size;
-	public PanelMaterials materials;
-	public GameObject[,] theBoard;
+	public Vector2 startLocation;
+
 	public NumPanel[] numPanels;
 
-	public int selecting_index;
-	public bool selecting;
+	public List<Vector2> obstacles;
+	public bool addObstacle;
+	public bool removeObstacle;
+
+	public GameObject panel;
+	public PanelMaterials materials;
+	public GameObject[,] theBoard;
+	public Player thePlayer;
+
 
 	// Use this for initialization
 	void Start () {
-	
+		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
+	}
+
+	public Vector2 ToXY(int i, int j) {
+		float newX = size * ((1f - m_width) / 2f + j);
+		float newY = size * ((1f - m_height) / 2f + i);
+		return new Vector2 (newX, newY);
 	}
 
 	public void SaveTemplate() {
 		string path = EditorUtility.SaveFilePanel ("Create new Maze Level",
-		                                           "Assets/BoardTemplates/", "default.asset", "asset");
+		                                           "Assets/Resources/BoardTemplates/", "default.asset", "asset");
 		
 		if (path == "")
 			return;
@@ -44,15 +92,30 @@ public class Board : MonoBehaviour {
 		AssetDatabase.SaveAssets ();
 	}
 
+	public void LoadTemplate(BoardTemplate template) {
+		m_width = template.m_width;
+		m_height = template.m_height;
+		size = template.size;
+		startLocation = template.startLocation;
+		numPanels = template.numPanels.Clone () as NumPanel[];
+		obstacles = template.obstacles;
+		endTile = template.endTile;
+	}
+
 	public BoardTemplate GenTemplate() {
 		BoardTemplate bt = BoardTemplate.CreateInstance <BoardTemplate>();
 		bt.m_width = m_width;
 		bt.m_height = m_height;
 		bt.size = size;
-		bt.numPanels = numPanels;
-		foreach (NumPanel numPanel in bt.numPanels) {
+		bt.startLocation = startLocation;
+		bt.endTile = endTile;
+		bt.numPanels = numPanels.Clone () as NumPanel[];
+		for(int i=0; i<numPanels.Length; i++) {
+			NumPanel numPanel = bt.numPanels[i];
 			numPanel.activated = false;
+			numPanel.placed = numPanels[i].placed;
 		}
+		bt.obstacles = new List<Vector2> (obstacles);;
 		return bt;
 	}
 
@@ -76,7 +139,12 @@ public class Board : MonoBehaviour {
 		//x and y are switched here... because
 		if (position.y >= 0 && position.y < m_width) {
 			if (position.x >= 0 && position.x < m_height) {
-				return true;
+				if (obstacles.FindAll(p=> p.Equals(position)).Count > 0){
+					Debug.Log ("Tried to move onto an obstacle tile");
+				}
+				else {
+					return true;
+				}
 			}
 		}
 		return false;
@@ -86,35 +154,77 @@ public class Board : MonoBehaviour {
 		return numPanels.Where(n => n.number == num.ToString ()).ElementAt(0);
 	}
 
+
+	void GenBoard() {
+		if (loadTemplate) {
+			LoadTemplate (myTemplate);
+			thePlayer.BeAtIJ(startLocation);
+		}
+		else {
+			initializing = true;
+			obstacles = new List<Vector2> ();
+			for (int i=0; i<numPanels.Length; i++) {
+				NumPanel numPanel = numPanels[i];
+				numPanel.position = Vector2.zero;
+				numPanel.activated = false;
+				numPanel.select = false;
+				numPanel.placed = false;
+				numPanel.number = (i+1).ToString();
+			}
+			endTile = new EndTile();
+		}
+		selecting = false;
+
+		GameObject[] panels = GameObject.FindGameObjectsWithTag ("panel");
+		foreach (GameObject thisPanel in panels) {
+			DestroyImmediate (thisPanel);
+		}
+
+		theBoard = new GameObject[m_width, m_height];
+		for (int i=0; i<m_height; i++) {
+			float newX = -size*m_width/2f;
+			float newZ = size*(i+(1-m_height)/2f);
+			for (int j=0; j<m_width; j++) {
+				GameObject newPanel = GameObject.Instantiate(panel) as GameObject;
+				theBoard[j, i] = newPanel;
+				newPanel.transform.parent = gameObject.transform;
+				newPanel.transform.localPosition = new Vector3(size*((1-m_width)/2f + j), 0, size*((1-m_height)/2f + i));
+				newPanel.GetComponent<Panel>().position = new Vector2(i, j);
+			}
+		}
+
+		for (int i=0; i<numPanels.Length; i++) {
+			NumPanel numPanel = numPanels[i];
+			if (numPanel.placed) {
+				numPanel.GetPanel ().AddNumber (numPanel);
+			}
+		}
+
+		foreach (Vector2 obstacle in obstacles) {
+			getPanel(obstacle).GetComponent<Panel>().makeInvisible();
+		}
+		if (endTile.placed) {
+			Debug.Log (getPanel (endTile.position));
+			getPanel(endTile.position).addExit();
+		}
+		
+	}
+	
 	// Update is called once per frame
 	void Update () {
 		if (activate) {
 			activate = false;
-			GameObject[] panels = GameObject.FindGameObjectsWithTag ("panel");
-			foreach (GameObject thisPanel in panels) {
-				DestroyImmediate (thisPanel);
-			}
-			theBoard = new GameObject[m_width, m_height];
-			for (int i=0; i<m_height; i++) {
-				float newX = -size*m_width/2f;
-				float newZ = size*(i+(1-m_height)/2f);
-				for (int j=0; j<m_width; j++) {
-					GameObject newPanel = GameObject.Instantiate(panel) as GameObject;
-					theBoard[j, i] = newPanel;
-					newPanel.transform.parent = gameObject.transform;
-					newPanel.transform.localPosition = new Vector3(size*((1-m_width)/2f + j), 0, size*((1-m_height)/2f + i));
-					newPanel.GetComponent<Panel>().position = new Vector2(i, j);
-				}
-			}
-
+			GenBoard ();
 		}
 		if (save) {
 			save = false;
 			SaveTemplate();
 		}
+		if (addObstacle) {
+			removeObstacle = false;
+		}
 		for (int i =0; i < numPanels.Length; i++) {
 			NumPanel numPanel = numPanels[i];
-			numPanel.number = (i+1).ToString();
 			if (numPanel.select) {
 				selecting_index = i;
 				selecting = true;
