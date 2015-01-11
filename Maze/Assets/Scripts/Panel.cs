@@ -29,12 +29,20 @@ public class Panel : MonoBehaviour {
 
 	public void makeVisible() {
 		visible = true;
-		GetComponent<MeshRenderer> ().enabled = true;
+		GetComponentInChildren<MeshRenderer> ().enabled = true;
+		ParticleSystem[] parts = GetComponentsInChildren<ParticleSystem> ();
+		foreach (ParticleSystem part in parts) {
+			part.enableEmission = true;
+		}
 	}
 	public void makeInvisible() {
 		Debug.Log ("Make Invisible");
 		visible = false;
-		GetComponent<MeshRenderer> ().enabled = false;
+		GetComponentInChildren<MeshRenderer> ().enabled = false;
+		ParticleSystem[] parts = GetComponentsInChildren<ParticleSystem> ();
+		foreach (ParticleSystem part in parts) {
+			part.enableEmission = false;
+		}
 	}
 	
 	void OnMouseDown() {
