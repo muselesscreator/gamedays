@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
 				Panel newPanel = theBoard.getPanel (newPosition);
 				if (newPanel.triggered == false) {
 					bool reqsNotMet = false;
-					if (newPanel.myKey != 0) {
+					if (newPanel.myKey > 0) {
 						for (int i=0; i < newPanel.myKey-1; i++) {
 							if (!theBoard.numPanels[i].activated) {
 								reqsNotMet = true;
@@ -67,6 +67,15 @@ public class Player : MonoBehaviour {
 						}
 						if (!reqsNotMet) {
 							theBoard.getNumPanel(newPanel.myKey).activated = true;
+						}
+					}
+					else if (newPanel.myKey == -1) {
+						Debug.Log ("new panel is exit");
+						for (int i=0; i<theBoard.numPanels.Length; i++) {
+							NumPanel numPanel = theBoard.numPanels[i];
+							if (numPanel.placed && !numPanel.activated) {
+								reqsNotMet = true;
+							}
 						}
 					}
 					if (!reqsNotMet){

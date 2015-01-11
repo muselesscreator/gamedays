@@ -197,6 +197,7 @@ public class Board : MonoBehaviour {
 			NumPanel numPanel = numPanels[i];
 			if (numPanel.placed) {
 				numPanel.GetPanel ().AddNumber (numPanel);
+				numPanel.activated = false;
 			}
 		}
 
