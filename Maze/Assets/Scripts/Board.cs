@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +81,8 @@ public class Board : MonoBehaviour {
 	}
 
 	public void SaveTemplate() {
-		string path = EditorUtility.SaveFilePanel ("Create new Maze Level",
+		/*
+		 * string path = EditorUtility.SaveFilePanel ("Create new Maze Level",
 		                                           "Assets/Resources/BoardTemplates/", "default.asset", "asset");
 		
 		if (path == "")
@@ -90,6 +92,7 @@ public class Board : MonoBehaviour {
 		BoardTemplate template = GenTemplate ();
 		AssetDatabase.CreateAsset (template, path);
 		AssetDatabase.SaveAssets ();
+		*/
 	}
 
 	public void LoadTemplate(BoardTemplate template) {
@@ -134,6 +137,22 @@ public class Board : MonoBehaviour {
 		return null;
 	}
 
+	public void nextLevel() {
+		string[] levelDesc = myTemplate.name.Split ('_');
+		Debug.Log (myTemplate.name);
+		int pack = Int32.Parse(levelDesc[0]);
+		int level = Int32.Parse (levelDesc[1]);
+		string fn = "BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString();
+		Debug.Log (fn);
+		BoardTemplate next = Resources.Load ("BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString()) as BoardTemplate;
+		if (next == null) {
+			next = Resources.Load ("BoardTemplates/" + (pack+1).ToString () + "_1") as BoardTemplate;
+		}
+		myTemplate = next;
+		loadTemplate = true;
+		activate = true;
+	}
+
 	public bool isValid(Vector2 position) {
 		//x and y are switched here... because
 		if (position.y >= 0 && position.y < m_width) {
@@ -155,6 +174,7 @@ public class Board : MonoBehaviour {
 
 
 	void GenBoard() {
+		Debug.Log (myTemplate.name);
 		if (loadTemplate) {
 			LoadTemplate (myTemplate);
 			thePlayer.BeAtIJ(startLocation);
