@@ -98,7 +98,6 @@ public class Board : MonoBehaviour {
 	public void LoadTemplate(BoardTemplate template) {
 		m_width = template.m_width;
 		m_height = template.m_height;
-		size = template.size;
 		startLocation = template.startLocation;
 		numPanels = template.numPanels.Clone () as NumPanel[];
 		obstacles = template.obstacles;
@@ -109,7 +108,6 @@ public class Board : MonoBehaviour {
 		BoardTemplate bt = BoardTemplate.CreateInstance <BoardTemplate>();
 		bt.m_width = m_width;
 		bt.m_height = m_height;
-		bt.size = size;
 		bt.startLocation = startLocation;
 		bt.endTile = endTile;
 		bt.numPanels = numPanels.Clone () as NumPanel[];
@@ -235,7 +233,7 @@ public class Board : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (activate) {
+		if (activate || Input.GetButtonDown("Jump")) {
 			activate = false;
 			GenBoard ();
 		}
