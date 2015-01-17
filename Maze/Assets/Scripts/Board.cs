@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +78,23 @@ public class Board : MonoBehaviour {
 		float newX = size * ((1f - m_width) / 2f + j);
 		float newY = size * ((1f - m_height) / 2f + i);
 		return new Vector2 (newX, newY);
+	}
+
+	
+	public void nextLevel() {
+		string[] levelDesc = myTemplate.name.Split ('_');
+		Debug.Log (myTemplate.name);
+		int pack = Int32.Parse(levelDesc[0]);
+		int level = Int32.Parse (levelDesc[1]);
+		string fn = "BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString();
+		Debug.Log (fn);
+		BoardTemplate next = Resources.Load ("BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString()) as BoardTemplate;
+		if (next == null) {
+			next = Resources.Load ("BoardTemplates/" + (pack+1).ToString () + "_1") as BoardTemplate;
+		}
+		myTemplate = next;
+		loadTemplate = true;
+		activate = true;
 	}
 
 	public void SaveTemplate() {
@@ -215,7 +233,7 @@ public class Board : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (activate) {
+		if (activate || Input.GetButtonDown ("Jump")) {
 			activate = false;
 			GenBoard ();
 		}

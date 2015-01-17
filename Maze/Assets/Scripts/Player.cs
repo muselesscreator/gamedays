@@ -112,6 +112,9 @@ public class Player : MonoBehaviour {
 			if (transform.position == targetPosition) {
 				anim.SetBool ("isWalking", false);
 				isWalking = false;
+				if (position == theBoard.endTile.position) {
+					theBoard.nextLevel();
+				}
 			}
 			else {
 				float distCovered = (Time.time - startTime) * speed;
