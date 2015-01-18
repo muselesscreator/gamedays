@@ -171,6 +171,9 @@ public class Board : MonoBehaviour {
 		return numPanels.Where(n => n.number == num.ToString ()).ElementAt(0);
 	}
 
+	public int TotalPanels() {
+		return (m_width * m_height) - obstacles.Count;
+	}
 
 	void GenBoard() {
 		if (loadTemplate) {

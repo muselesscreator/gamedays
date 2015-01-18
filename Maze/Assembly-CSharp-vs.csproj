@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Board.cs" />
+     <Compile Include="Assets\Scripts\BoardPlane.cs" />
      <Compile Include="Assets\Scripts\BoardTemplate.cs" />
      <Compile Include="Assets\Scripts\Panel.cs" />
      <Compile Include="Assets\Scripts\PathLight.cs" />
