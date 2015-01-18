@@ -145,7 +145,7 @@ public class Panel : MonoBehaviour {
 	}
 
 	void OnMouseOver() {
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButton(0) && !thePlayer.isWalking) {
 			if (thePlayer.lastSelected == position) 
 				return;
 			if (thePlayer.canReach(position) && thePlayer.selecting) {
