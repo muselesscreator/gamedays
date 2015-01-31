@@ -16,10 +16,8 @@ public class PathLight : MonoBehaviour {
 
 	}
 
-	public void init (Vector2 position, Quaternion rotation) {
+	public void init (Quaternion rotation) {
 		theBoard = GameObject.Find ("GameController").GetComponent<Board> ();
-		transform.parent = theBoard.getPanel (position).gameObject.transform;
-		myPanel = theBoard.getPanel (position).GetComponent<Panel> ();
 		transform.localRotation = rotation;
 		transform.localPosition = new Vector3 (0f, .5f, 0f);
 

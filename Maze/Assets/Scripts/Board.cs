@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +80,23 @@ public class Board : MonoBehaviour {
 		return new Vector2 (newX, newY);
 	}
 
+	
+	public void nextLevel() {
+		string[] levelDesc = myTemplate.name.Split ('_');
+		Debug.Log (myTemplate.name);
+		int pack = Int32.Parse(levelDesc[0]);
+		int level = Int32.Parse (levelDesc[1]);
+		string fn = "BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString();
+		Debug.Log (fn);
+		BoardTemplate next = Resources.Load ("BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString()) as BoardTemplate;
+		if (next == null) {
+			next = Resources.Load ("BoardTemplates/" + (pack+1).ToString () + "_1") as BoardTemplate;
+		}
+		myTemplate = next;
+		loadTemplate = true;
+		activate = true;
+	}
+
 	public void SaveTemplate() {
 		string path = EditorUtility.SaveFilePanel ("Create new Maze Level",
 		                                           "Assets/Resources/BoardTemplates/", "default.asset", "asset");
@@ -153,6 +171,9 @@ public class Board : MonoBehaviour {
 		return numPanels.Where(n => n.number == num.ToString ()).ElementAt(0);
 	}
 
+	public int TotalPanels() {
+		return (m_width * m_height) - obstacles.Count;
+	}
 
 	void GenBoard() {
 		if (loadTemplate) {
@@ -215,7 +236,7 @@ public class Board : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (activate) {
+		if (activate || Input.GetButtonDown ("Jump")) {
 			activate = false;
 			GenBoard ();
 		}
