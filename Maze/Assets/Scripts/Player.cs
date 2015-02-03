@@ -35,6 +35,16 @@ public class Player : MonoBehaviour {
 	Vector3 right = new Vector3 (90, 0, 0);
 
 	// Use this for initialization
+	
+	void Awake () {
+		theBoard = GameObject.Find ("GameController").GetComponent<Board> ();
+		anim = GetComponent<Animator> ();
+	}
+	
+	void Start() {
+		theBoard.loadTemplate = true;
+		theBoard.activate = true;
+	}
 
 	public bool canReach(Vector2 newPos) {
 		Debug.Log ("Can reach");
@@ -94,7 +104,6 @@ public class Player : MonoBehaviour {
 		/*
 		 * Retrace the path back to the input position
 		 */
-		Debug.Log ("retraceTo0000000000000000000000000");
 		int c = path.Count-1;
 		tmp_path.Clear();
 		retracing = true;
@@ -104,12 +113,6 @@ public class Player : MonoBehaviour {
 		Move ();
 	}
 
-	void Start () {
-		theBoard = GameObject.Find ("GameController").GetComponent<Board>();
-		anim = GetComponent<Animator>();
-		journeyLength = theBoard.size;
-		theBoard.activate = true;
-	}
 
 	public void BeAtIJ(Vector2 p) {
 		Vector2 actualLocation = theBoard.ToXY((int) p.x, (int) p.y);
@@ -145,7 +148,6 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Move () {
-		Debug.Log ("MOOOOOOOOOOOOOOOOOOOOVE");
 		moveIndex = 1;
 		moveToNext ();
 	}
@@ -156,7 +158,6 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() {
 		if ((selected || (Input.GetMouseButton (0) == false && selecting)) && !retracing) {
-			Debug.Log (Input.GetMouseButton(0));
 			selected = false;
 			selecting = false;	
 			if (tmp_path.Count > 1 ) {
@@ -166,13 +167,14 @@ public class Player : MonoBehaviour {
 		}
 		if (isWalking) {
 			if (transform.localPosition == targetPosition) {
-				Debug.Log (tmp_path[moveIndex].ToString ());
 				IEnumerable<NumPanel> numPanels = theBoard.numPanels.Where(n => n.placed && Vector2.Distance (n.position, tmp_path[moveIndex]) == 0);
+
+				//If this panel has a number on it, and we are not retracing, then light up
 				if (numPanels.Count() > 0 && !retracing) {
-					Debug.Log ("???");
 					numPanels.ElementAt(0).activated = true;
 					theBoard.getPanel (tmp_path[moveIndex]).pathLight.bigBeacon.enableEmission = true;
 				}
+				// If we have reached the last location in our path
 				if (moveIndex == tmp_path.Count-1) {
 					isWalking = false;
 					anim.SetBool("isWalking", false);
@@ -201,7 +203,7 @@ public class Player : MonoBehaviour {
 			}
 			else {
 				float distCovered = (Time.time - startTime) * speed;
-				float fracJourney = distCovered / journeyLength;
+				float fracJourney = distCovered / theBoard.size;
 				transform.localPosition = Vector3.Lerp (transform.localPosition, targetPosition, fracJourney);
 			}
 			

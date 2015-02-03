@@ -71,7 +71,7 @@ public class Board : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
+
 	}
 
 	public Vector2 ToXY(int i, int j) {
@@ -88,11 +88,18 @@ public class Board : MonoBehaviour {
 		int level = Int32.Parse (levelDesc[1]);
 		string fn = "BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString();
 		Debug.Log (fn);
-		BoardTemplate next = Resources.Load ("BoardTemplates/" + pack.ToString () + "_" + (level+1).ToString()) as BoardTemplate;
+		BoardTemplate next = Resources.Load (fn) as BoardTemplate;
+		Debug.Log (next);
 		if (next == null) {
-			next = Resources.Load ("BoardTemplates/" + (pack+1).ToString () + "_1") as BoardTemplate;
+			GameObject[] panels = GameObject.FindGameObjectsWithTag ("panel");
+			foreach (GameObject thisPanel in panels) {
+				DestroyImmediate (thisPanel);
+			}
+			Application.LoadLevel (0); 
+			return;
 		}
-		myTemplate = next;
+		Debug.Log (next);
+		ApplicationModel.template = next;
 		loadTemplate = true;
 		activate = true;
 	}
@@ -176,6 +183,8 @@ public class Board : MonoBehaviour {
 	}
 
 	void GenBoard() {
+		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
+		myTemplate = ApplicationModel.template;
 		if (loadTemplate) {
 			LoadTemplate (myTemplate);
 			thePlayer.BeAtIJ(startLocation);
