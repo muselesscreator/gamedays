@@ -179,7 +179,7 @@ public class Player : MonoBehaviour {
 					isWalking = false;
 					anim.SetBool("isWalking", false);
 					if (position == theBoard.endTile.position) {
-						theBoard.nextLevel();
+						theBoard.teleport();
 					}
 					for (int i=1; i<tmp_path.Count; i++) {
 						if (retracing) {

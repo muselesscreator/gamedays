@@ -7,11 +7,12 @@ public class LevelSelector : MonoBehaviour {
 	public BoardTemplate template;
 	public int index;
 	public Vector2 position;
+	public LevelPackFrame parent;
 
 	// Use this for initialization
-	public void initialize (LevelPackFrame parent, int i) {
+	public void initialize (LevelPackFrame frame, int i) {
 		gameObject.name = "LevelSelector";
-
+		parent = frame;
 		index = i;
 		template = parent.myPack.levels [i];
 		RectTransform myRect = GetComponent<RectTransform> ();
@@ -44,6 +45,7 @@ public class LevelSelector : MonoBehaviour {
 	void OnMouseDown() {
 		Debug.Log ("Clicked!");
 		ApplicationModel.setTemplate (template);
+		ApplicationModel.setPack (parent.myPack);
 		Application.LoadLevel (1);
 	}
 

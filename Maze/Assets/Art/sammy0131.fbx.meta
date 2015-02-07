@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 85d64fbfc729c0846915d5976b374b1a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: sammy02
+    100004: sammy02Helmet
+    100006: sammyRig
+    100008: sammyRig|arm.L
+    100010: sammyRig|arm.L.001
+    100012: sammyRig|arm.L.003
+    100014: sammyRig|arm.L.005
+    100016: sammyRig|arm.L.006
+    100018: sammyRig|arm.R
+    100020: sammyRig|arm.R.001
+    100022: sammyRig|arm.R.003
+    100024: sammyRig|arm.R.005
+    100026: sammyRig|arm.R.006
+    100028: sammyRig|belly
+    100030: sammyRig|chest
+    100032: sammyRig|hand.L
+    100034: sammyRig|hand.L.001
+    100036: sammyRig|hand.L.003
+    100038: sammyRig|hand.R
+    100040: sammyRig|hand.R.001
+    100042: sammyRig|hand.R.003
+    100044: sammyRig|head
+    100046: sammyRig|head.001
+    100048: sammyRig|helmet
+    100050: sammyRig|hips
+    100052: sammyRig|pinky01.L
+    100054: sammyRig|pinky01.R
+    100056: sammyRig|pinky02.L
+    100058: sammyRig|pinky02.R
+    100060: sammyRig|root
+    100062: sammyRig|shoulder.L
+    100064: sammyRig|shoulder.R
+    100066: sammyRig|thumb01.L
+    100068: sammyRig|thumb01.R
+    100070: sammyRig|thumb02.L
+    100072: sammyRig|thumb02.R
+    400000: //RootNode
+    400002: sammy02
+    400004: sammy02Helmet
+    400006: sammyRig
+    400008: sammyRig|arm.L
+    400010: sammyRig|arm.L.001
+    400012: sammyRig|arm.L.003
+    400014: sammyRig|arm.L.005
+    400016: sammyRig|arm.L.006
+    400018: sammyRig|arm.R
+    400020: sammyRig|arm.R.001
+    400022: sammyRig|arm.R.003
+    400024: sammyRig|arm.R.005
+    400026: sammyRig|arm.R.006
+    400028: sammyRig|belly
+    400030: sammyRig|chest
+    400032: sammyRig|hand.L
+    400034: sammyRig|hand.L.001
+    400036: sammyRig|hand.L.003
+    400038: sammyRig|hand.R
+    400040: sammyRig|hand.R.001
+    400042: sammyRig|hand.R.003
+    400044: sammyRig|head
+    400046: sammyRig|head.001
+    400048: sammyRig|helmet
+    400050: sammyRig|hips
+    400052: sammyRig|pinky01.L
+    400054: sammyRig|pinky01.R
+    400056: sammyRig|pinky02.L
+    400058: sammyRig|pinky02.R
+    400060: sammyRig|root
+    400062: sammyRig|shoulder.L
+    400064: sammyRig|shoulder.R
+    400066: sammyRig|thumb01.L
+    400068: sammyRig|thumb01.R
+    400070: sammyRig|thumb02.L
+    400072: sammyRig|thumb02.R
+    4300000: sammy02Helmet
+    4300002: sammy02
+    7400000: idle
+    7400002: run
+    7400004: negative
+    7400006: walk
+    7400008: keepAlive01
+    7400010: introAnimation
+    7400012: sammyRig|introAnimation
+    9500000: //RootNode
+    13700000: sammy02
+    13700002: sammy02Helmet
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run
+      takeName: run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: negative
+      takeName: negative
+      firstFrame: 0
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk
+      takeName: walk
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: keepAlive01
+      takeName: keepAlive01
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: introAnimation
+      takeName: introAnimation
+      firstFrame: 0
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: sammyRig|introAnimation
+      takeName: sammyRig|introAnimation
+      firstFrame: 0
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sammy02
+        weight: 1
+      - path: sammy02Helmet
+        weight: 1
+      - path: sammyRig
+        weight: 1
+      - path: sammyRig/sammyRig|root
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.L.001/sammyRig|arm.L.005/sammyRig|arm.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|arm.R.001/sammyRig|arm.R.005/sammyRig|arm.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|belly
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|helmet/sammyRig|head/sammyRig|head.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|hand.L.001/sammyRig|hand.L.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|pinky01.L/sammyRig|pinky02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.L/sammyRig|arm.L/sammyRig|arm.L.006/sammyRig|hand.L/sammyRig|thumb01.L/sammyRig|thumb02.L
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|hand.R.001/sammyRig|hand.R.003
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|pinky01.R/sammyRig|pinky02.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R
+        weight: 1
+      - path: sammyRig/sammyRig|root/sammyRig|hips/sammyRig|chest/sammyRig|shoulder.R/sammyRig|arm.R/sammyRig|arm.R.006/sammyRig|hand.R/sammyRig|thumb01.R/sammyRig|thumb02.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

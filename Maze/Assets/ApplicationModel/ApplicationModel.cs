@@ -6,6 +6,7 @@ public class ApplicationModel : MonoBehaviour {
 	public static bool isPuzzle = false;
 
 	public static BoardTemplate template;
+	public static LevelPack pack;
 
 	public static void setIsPuzzle (bool puz) {
 		isPuzzle = puz;
@@ -13,6 +14,10 @@ public class ApplicationModel : MonoBehaviour {
 
 	public static void setTemplate (BoardTemplate bt) {
 		template = bt;
+	}
+
+	public static void setPack(LevelPack p) {
+		pack = p;
 	}
 
 }

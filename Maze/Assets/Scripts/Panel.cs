@@ -22,16 +22,34 @@ public class Panel : MonoBehaviour {
 	Player thePlayer;
 	public bool visible;
 	public PathLight pathLight;
+	public GameObject myTile;
+	public LevelPackManager manager;
+	public GameObject numPanel = null;
+	public float teleport_time = 0f;
 
 
 	// Use this for initialization
 	void Awake () {
 		theBoard = GameObject.Find("GameController").GetComponent<Board>();
+		manager = GameObject.Find ("GameController").GetComponent<LevelPackManager> ();
 		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
 		pathLight = transform.GetComponentInChildren<PathLight>();
+		myTile = GameObject.Instantiate (manager.Panels.Where (p => p.name == ApplicationModel.pack.tiles.name).ElementAt(0)) as GameObject;
+		myTile.transform.parent = transform;
+		RectTransform rect = myTile.GetComponent<RectTransform> ();
+		rect.anchoredPosition3D = Vector3.zero;
 		visible = true;
 	}
-
+	
+	// Update is called once per frame
+	void Update () {
+		if (numPanel != null) {
+			numPanel.transform.Rotate (new Vector3(0, 5, 0));
+		}
+		if (teleport_time > 0 && Time.time > teleport_time) {
+			theBoard.nextLevel();
+		}
+	}
 	public void makeVisible() {
 		visible = true;
 		GetComponentInChildren<MeshRenderer> ().enabled = true;
@@ -179,36 +197,54 @@ public class Panel : MonoBehaviour {
 			}
 		}
 		if (theBoard.endTile.position == position) {
-			Debug.Log ("Clearing exit");
-			theBoard.endTile.position = Vector2.zero;
-			theBoard.endTile.placed = false;
-			Destroy (GameObject.Find ("PanelEnd"));
+			removeExit ();
 		}
 	}
+
 	
 	public void addExit() {
+		Debug.Log ("Add Exit");
 		Debug.Log (theBoard);
 		Debug.Log (theBoard.endTile);
 		if (theBoard.endTile.placed) {
-			Destroy(GameObject.Find ("PanelEnd"));
+			Panel endPanel = theBoard.getPanel (theBoard.endTile.position);
+			endPanel.removeExit();
 			theBoard.getPanel (theBoard.endTile.position).myKey = 0;
 		}
-		GameObject exit = GameObject.Instantiate (Resources.Load ("Prefabs/PanelEnd")) as GameObject;
-		exit.name = "PanelEnd";
-		exit.transform.parent = transform;
-		exit.transform.localPosition = new Vector3(0, .5f, 0);
+		Destroy (myTile);
+		myTile = GameObject.Instantiate (manager.Panels.Where (p => p.name=="exitTile").ElementAt(0)) as GameObject;
+		myTile.transform.parent = transform;
+		myTile.transform.localPosition = new Vector3(0, .5f, 0);
 		theBoard.endTile.placed = true;
 		theBoard.endTile.position = position;
 		myKey = -1;
 	}
+
+
+	public void removeExit() {
+		myKey = 0;
+		Destroy (myTile);
+		myTile = GameObject.Instantiate (manager.Panels.Where (p => p.name == ApplicationModel.pack.tiles.name).ElementAt(0)) as GameObject;
+		myTile.transform.parent = transform;
+		RectTransform rect = myTile.GetComponent<RectTransform> ();
+		rect.anchoredPosition3D = Vector3.zero;
+	}
+
+	public void teleport() {
+		Debug.Log ("teleport!!!");
+		myTile.GetComponent<Animator> ().SetTrigger ("teleport");
+		teleport_time = Time.time + 1.3f;
+	}
 	
-	public void AddNumber(NumPanel numPanel) {
-		string name = "Panel" + numPanel.number;
-		GameObject number = GameObject.Instantiate (Resources.Load ("Prefabs/" + name)) as GameObject;
-		number.name = name;
-		number.transform.parent = transform;
-		number.transform.localPosition = new Vector3 (0, .5f, 0);
-		myKey = Int32.Parse (numPanel.number);
+	public void AddNumber(NumPanel nPanel) {
+		string name = "number" + nPanel.number;
+		numPanel = GameObject.Instantiate (manager.NumPanels.Where(n => n.name == name).ElementAt(0)) as GameObject;
+		numPanel.GetComponent<Animator> ().SetInteger ("idleAction", UnityEngine.Random.Range (1, 8));
+		numPanel.name = name;
+		numPanel.transform.parent = transform;
+		numPanel.transform.localPosition = new Vector3 (0, 1.5f, 0);
+		numPanel.transform.localRotation = Quaternion.Euler (0, 300, 0);
+		myKey = Int32.Parse (nPanel.number);
 	}
 
 	public bool isAdjacentTo(Vector2 newPos) {
@@ -227,14 +263,14 @@ public class Panel : MonoBehaviour {
 
 	public void lightUp() {
 		Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
-		mats[0] = theBoard.materials.brightPanel;
+		mats[1] = theBoard.materials.brightPanel;
 		GetComponentInChildren<MeshRenderer>().materials = mats;
 	}
 
 	public void goDark() {
 		Debug.Log ("Go Dark at " + position.ToString ());
 		Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
-		mats[0] = theBoard.materials.dimPanel;
+		mats[1] = theBoard.materials.dimPanel;
 		GetComponentInChildren<MeshRenderer>().materials = mats;
 		pathLight.tracLight.enableEmission = false;
 		pathLight.bigBeacon.enableEmission = false;
@@ -245,13 +281,6 @@ public class Panel : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
-	void Update () {
-		if (oldType != myType) {
-			Debug.Log (myType);
-			oldType = myType;
-		}
-	}
 
 	public void showPath(Quaternion rotation) {
 		pathLight.tracLight.enableEmission = true;

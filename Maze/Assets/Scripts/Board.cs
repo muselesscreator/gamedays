@@ -67,11 +67,12 @@ public class Board : MonoBehaviour {
 	public PanelMaterials materials;
 	public GameObject[,] theBoard;
 	public Player thePlayer;
+	public LevelPackManager manager;
 
 
 	// Use this for initialization
 	void Start () {
-
+		manager = GetComponent<LevelPackManager> ();
 	}
 
 	public Vector2 ToXY(int i, int j) {
@@ -80,7 +81,11 @@ public class Board : MonoBehaviour {
 		return new Vector2 (newX, newY);
 	}
 
-	
+	public void teleport() {
+		getPanel (endTile.position).teleport ();
+	}
+
+
 	public void nextLevel() {
 		string[] levelDesc = myTemplate.name.Split ('_');
 		Debug.Log (myTemplate.name);
@@ -120,7 +125,6 @@ public class Board : MonoBehaviour {
 	public void LoadTemplate(BoardTemplate template) {
 		m_width = template.m_width;
 		m_height = template.m_height;
-		size = template.size;
 		startLocation = template.startLocation;
 		numPanels = template.numPanels.Clone () as NumPanel[];
 		obstacles = template.obstacles;
@@ -183,6 +187,12 @@ public class Board : MonoBehaviour {
 	}
 
 	void GenBoard() {
+
+		Destroy (GameObject.Find ("planet"));
+		GameObject planet = GameObject.Instantiate (manager.Planets.Where (p => p.name == ApplicationModel.pack.planet.name).ElementAt (0)) as GameObject;
+		planet.name = "planet";
+		planet.transform.position = new Vector3 (-5, -3, 12);
+
 		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
 		myTemplate = ApplicationModel.template;
 		if (loadTemplate) {
@@ -214,6 +224,7 @@ public class Board : MonoBehaviour {
 			float newX = -size*m_width/2f;
 			float newZ = size*(i+(1-m_height)/2f);
 			for (int j=0; j<m_width; j++) {
+
 				GameObject newPanel = GameObject.Instantiate(panel) as GameObject;
 				theBoard[j, i] = newPanel;
 				newPanel.transform.parent = gameObject.transform;

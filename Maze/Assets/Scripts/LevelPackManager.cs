@@ -8,6 +8,10 @@ public class LevelPackManager : MonoBehaviour {
 
 	public List<LevelPack> levelPacks;
 	LevelPack currentPack;
+	
+	public GameObject[] Panels;
+	public GameObject[] Planets;
+	public GameObject[] NumPanels;
 
 	void Awake() {
 		DontDestroyOnLoad(transform.gameObject);
@@ -40,3 +44,4 @@ public class LevelPackManager : MonoBehaviour {
 		levelPacks.Add (newPack);
 	}
 }
+

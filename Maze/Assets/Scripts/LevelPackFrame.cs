@@ -59,7 +59,7 @@ public class LevelPackFrame : MonoBehaviour {
 		GameObject planet = GameObject.Instantiate (myPack.planet) as GameObject;
 		planet.transform.parent = transform;
 		planet.transform.localScale = Vector3.one * 8f;
-		planet.transform.localPosition = new Vector3 (300, getPackHeight()-50, -10);
+		planet.transform.localPosition = new Vector3 (310, getPackHeight()-50, -10);
 
 
 	}
