@@ -36,6 +36,7 @@ public class Panel : MonoBehaviour {
 		pathLight = transform.GetComponentInChildren<PathLight>();
 		myTile = GameObject.Instantiate (manager.Panels.Where (p => p.name == ApplicationModel.pack.tiles.name).ElementAt(0)) as GameObject;
 		myTile.transform.parent = transform;
+		myTile.name = ApplicationModel.pack.tiles.name;
 		RectTransform rect = myTile.GetComponent<RectTransform> ();
 		rect.anchoredPosition3D = Vector3.zero;
 		visible = true;
@@ -263,14 +264,24 @@ public class Panel : MonoBehaviour {
 
 	public void lightUp() {
 		Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
-		mats[1] = theBoard.materials.brightPanel;
+		if (myTile.name == "tile5") {
+			mats[0] = theBoard.materials.brightPanel;
+		}
+		else {
+			mats[1] = theBoard.materials.brightPanel;
+		}
 		GetComponentInChildren<MeshRenderer>().materials = mats;
 	}
 
 	public void goDark() {
 		Debug.Log ("Go Dark at " + position.ToString ());
 		Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
-		mats[1] = theBoard.materials.dimPanel;
+		if (myTile.name == "tile5") {
+			mats[0] = theBoard.materials.dimPanel;
+		}
+		else {
+			mats[1] = theBoard.materials.dimPanel;
+		}
 		GetComponentInChildren<MeshRenderer>().materials = mats;
 		pathLight.tracLight.enableEmission = false;
 		pathLight.bigBeacon.enableEmission = false;

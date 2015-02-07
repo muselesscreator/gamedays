@@ -25,7 +25,13 @@ public class LevelSelectFrame : MonoBehaviour {
 		for (int i=0; i < level_manager.levelPacks.Count; i++) {
 			showPack(i);
 		}
+		
+		RectTransform rect = GameObject.Find ("LevelSelectPanel").GetComponent<RectTransform> ();
+		rect.sizeDelta = new Vector2 (rect.sizeDelta [0], getTotalHeight ());
+		Debug.Log ("Current size delta: " + rect.sizeDelta.ToString ());
+		rect.anchoredPosition3D = new Vector3 (0, -getTotalHeight () / 2f, 0);
 		RectTransform panel = GameObject.Find ("LevelSelectPanel").GetComponent<RectTransform> ();
+
 	}
 
 	void showPack(int index) {
