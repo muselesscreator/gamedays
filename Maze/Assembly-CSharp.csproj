@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Board.cs" />
      <Compile Include="Assets\Scripts\BoardPlane.cs" />
      <Compile Include="Assets\Scripts\BoardTemplate.cs" />
+     <Compile Include="Assets\Scripts\DoNotDestroy.cs" />
      <Compile Include="Assets\Scripts\LevelPack.cs" />
      <Compile Include="Assets\Scripts\LevelPackFrame.cs" />
      <Compile Include="Assets\Scripts\LevelPackManager.cs" />
