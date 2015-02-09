@@ -187,6 +187,26 @@ public class Board : MonoBehaviour {
 	}
 
 	void GenBoard() {
+		myTemplate = ApplicationModel.template;
+
+		Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera> ();
+		int max_axis = Math.Max (myTemplate.m_width, myTemplate.m_height);
+		if (max_axis <= 4) {
+			cam.fieldOfView = 24;
+		}
+		else if (max_axis == 5) {
+			cam.fieldOfView = 32;
+		}
+		else if (max_axis == 6) {
+			cam.fieldOfView = 34;
+		}
+		else if (max_axis == 7) {
+			cam.fieldOfView = 38;
+		}
+		else if (max_axis == 8) {
+			cam.fieldOfView = 44;
+		}
+
 
 		Destroy (GameObject.Find ("planet"));
 		GameObject planet = GameObject.Instantiate (manager.Planets.Where (p => p.name == ApplicationModel.pack.planet.name).ElementAt (0)) as GameObject;
@@ -194,7 +214,6 @@ public class Board : MonoBehaviour {
 		planet.transform.position = new Vector3 (-5, -3, 12);
 
 		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
-		myTemplate = ApplicationModel.template;
 		if (loadTemplate) {
 			LoadTemplate (myTemplate);
 			thePlayer.BeAtIJ(startLocation);
