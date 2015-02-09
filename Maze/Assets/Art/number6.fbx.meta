@@ -1,36 +1,38 @@
 fileFormatVersion: 2
-guid: ba7ffeb9a0a4a904382ebbeb6dca8a39
+guid: bf778eb75c2804cabb32832393bf989a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: Armature
-    100002: Armature|Bone
-    100004: //RootNode
+    100000: //RootNode
+    100002: numberArmature
+    100004: numberArmature|Bone
     100006: numberSix
-    100008: numberaArmature
-    100010: numberaArmature|Bone
-    400000: Armature
-    400002: Armature|Bone
-    400004: //RootNode
+    400000: //RootNode
+    400002: numberArmature
+    400004: numberArmature|Bone
     400006: numberSix
-    400008: numberaArmature
-    400010: numberaArmature|Bone
-    2300000: numberSix
-    3300000: numberSix
     4300000: numberSix
     7400000: numberAction01
     7400002: numberAction02
     7400004: numberAction03
     7400006: numberAction04
-    7400008: Armature|numberAction01
-    7400010: Armature|numberAction02
-    7400012: Armature|numberAction03
-    7400014: Armature|numberAction04
-    7400016: numberaArmature|numberAction01
-    7400018: numberaArmature|numberAction02
-    7400020: numberaArmature|numberAction03
-    7400022: numberaArmature|numberAction04
+    7400008: numberAction05
+    7400010: numberActionTouch
+    7400012: numberArmature|numberAction01
+    7400014: numberArmature|numberAction02
+    7400016: numberArmature|numberAction03
+    7400018: numberArmature|numberAction04
+    7400020: numberArmature|numberAction05
+    7400022: numberArmature|numberActionTouch
+    7400024: numberArmature|tile_exit.001Action
+    7400026: numberArmature|tile_exit.002Action
+    7400028: numberArmature|tile_exitAction
+    7400030: numberSix|tile_exit.001Action
+    7400032: numberSix|tile_exit.002Action
+    7400034: numberSix|tile_exitAction
+    7400036: numberActionInvis
     9500000: //RootNode
+    13700000: numberSix
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +48,245 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: numberAction01
+      takeName: numberAction01
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: numberAction02
+      takeName: numberAction02
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: numberAction03
+      takeName: numberAction03
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: numberAction04
+      takeName: numberAction04
+      firstFrame: 0
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: numberAction05
+      takeName: numberAction05
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: numberActionTouch
+      takeName: numberActionTouch
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: numberActionInvis
+      takeName: numberActionTouch
+      firstFrame: 46
+      lastFrame: 46
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: numberArmature
+        weight: 1
+      - path: numberArmature/numberArmature|Bone
+        weight: 1
+      - path: numberSix
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
