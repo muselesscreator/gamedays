@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ public class PanelMaterials {
 	public Material brightPanel;
 }
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class Board : MonoBehaviour {
 	/* The main class for generating/maintaining the Maze board
 	 * 
@@ -108,7 +108,7 @@ public class Board : MonoBehaviour {
 		loadTemplate = true;
 		activate = true;
 	}
-
+	/*
 	public void SaveTemplate() {
 		string path = EditorUtility.SaveFilePanel ("Create new Maze Level",
 		                                           "Assets/Resources/BoardTemplates/", "default.asset", "asset");
@@ -121,6 +121,7 @@ public class Board : MonoBehaviour {
 		AssetDatabase.CreateAsset (template, path);
 		AssetDatabase.SaveAssets ();
 	}
+	*/
 
 	public void LoadTemplate(BoardTemplate template) {
 		m_width = template.m_width;
@@ -281,7 +282,7 @@ public class Board : MonoBehaviour {
 		}
 		if (save) {
 			save = false;
-			SaveTemplate();
+			//SaveTemplate();
 		}
 		if (addObstacle) {
 			removeObstacle = false;

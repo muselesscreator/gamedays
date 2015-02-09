@@ -12,6 +12,7 @@ public class LevelPackManager : MonoBehaviour {
 	public GameObject[] Panels;
 	public GameObject[] Planets;
 	public GameObject[] NumPanels;
+	public AudioClip[] LevelMusic;
 
 	void Awake() {
 		DontDestroyOnLoad(transform.gameObject);
