@@ -26,7 +26,13 @@ public class LevelPack : ScriptableObject{
 	public GameObject tiles;
 	[SerializeField]
 	public List<BoardTemplate> levels;
-	
+
+	[SerializeField]
+	public bool unlocked = false;
+	[SerializeField]
+	public int last_cleared_level = 0;
+
+
 	// Use this for initialization
 	void Start () {
 	

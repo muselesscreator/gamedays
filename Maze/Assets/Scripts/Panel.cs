@@ -135,7 +135,7 @@ public class Panel : MonoBehaviour {
 			/* 
 			 * game is running.  Try to move?
 			 */
-			if (!thePlayer.selected && !thePlayer.isWalking) { 
+			if (!thePlayer.selected && !thePlayer.isWalking && thePlayer.position != position) { 
 				thePlayer.tmp_path.Clear ();
 				if (thePlayer.path.Contains (position)) {
 					Debug.Log ("I've SEEN THIS");

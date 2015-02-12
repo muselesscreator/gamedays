@@ -120,7 +120,11 @@ public class Player : MonoBehaviour {
 		position = p;
 		path.Clear ();
 		path.Add (position);
+		retracing = false;
+		isWalking = false;
+		anim.SetBool ("isWalking", false);
 	}
+
 
 
 	public void moveToNext() {

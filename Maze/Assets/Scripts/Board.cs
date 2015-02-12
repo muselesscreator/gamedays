@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UniSave;
 
 [System.Serializable]
 public class PanelMaterials {
@@ -43,6 +44,8 @@ public class Board : MonoBehaviour {
 	public BoardTemplate myTemplate;
 	public bool loadTemplate;
 
+	public static Board boardInstance;
+
 	public bool save = false;
 
 	public bool selecting;
@@ -73,6 +76,13 @@ public class Board : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		manager = GetComponent<LevelPackManager> ();
+		if (boardInstance == null)
+		{
+			boardInstance = this;
+		}
+		else {
+			Destroy(gameObject);
+		}
 	}
 
 	public Vector2 ToXY(int i, int j) {
@@ -95,12 +105,17 @@ public class Board : MonoBehaviour {
 		Debug.Log (fn);
 		BoardTemplate next = Resources.Load (fn) as BoardTemplate;
 		Debug.Log (next);
+		if (ApplicationModel.pack.last_cleared_level < level) {
+			ApplicationModel.pack.last_cleared_level = level;
+			manager.Save ();
+		}
+
 		if (next == null) {
 			GameObject[] panels = GameObject.FindGameObjectsWithTag ("panel");
 			foreach (GameObject thisPanel in panels) {
 				DestroyImmediate (thisPanel);
 			}
-			Application.LoadLevel (0); 
+			Application.LoadLevel (2); 
 			return;
 		}
 		Debug.Log (next);
@@ -210,11 +225,12 @@ public class Board : MonoBehaviour {
 
 
 		Destroy (GameObject.Find ("planet"));
-		GameObject planet = GameObject.Instantiate (manager.Planets.Where (p => p.name == ApplicationModel.pack.planet.name).ElementAt (0)) as GameObject;
+		GameObject planet = GameObject.Instantiate (manager.Planets[ApplicationModel.pack.pack_num]) as GameObject;
 		planet.name = "planet";
-		planet.transform.position = new Vector3 (-5, -3, 12);
+		planet.transform.position = new Vector3 (-1.5f, 0f, 12);
 
 		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
+
 		if (loadTemplate) {
 			LoadTemplate (myTemplate);
 			thePlayer.BeAtIJ(startLocation);

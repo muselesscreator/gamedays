@@ -8,9 +8,13 @@ public class LevelSelector : MonoBehaviour {
 	public int index;
 	public Vector2 position;
 	public LevelPackFrame parent;
+	public bool unlocked;
+	public bool active;
+	public Board theBoard;
 
 	// Use this for initialization
 	public void initialize (LevelPackFrame frame, int i) {
+		theBoard = GameObject.Find("GameController").GetComponent<Board>();
 		gameObject.name = "LevelSelector";
 		parent = frame;
 		index = i;
@@ -40,13 +44,29 @@ public class LevelSelector : MonoBehaviour {
 		float newY = parent.padding + (parent.total_level_width * (parent.numRows - row - 1));
 
 		GetComponent<RectTransform>().anchoredPosition = new Vector2(newX, newY);
+
+		if (active) {
+			Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
+			if (template.name == "tile5") {
+				mats[0] = theBoard.materials.brightPanel;
+			}
+			else {
+				mats[1] = theBoard.materials.brightPanel;
+			}
+			GetComponentInChildren<MeshRenderer>().materials = mats;	
+		}
+		if (unlocked) {
+			GetComponentInChildren<ParticleSystem>().emissionRate = 70;
+		}
 	}
 
 	void OnMouseDown() {
 		Debug.Log ("Clicked!");
-		ApplicationModel.setTemplate (template);
-		ApplicationModel.setPack (parent.myPack);
-		Application.LoadLevel (1);
+		if (unlocked) {
+			ApplicationModel.setTemplate (template);
+			ApplicationModel.setPack (parent.myPack);
+			Application.LoadLevel (1);
+		}
 	}
 
 	public void Click() {

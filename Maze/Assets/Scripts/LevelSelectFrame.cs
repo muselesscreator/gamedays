@@ -23,7 +23,8 @@ public class LevelSelectFrame : MonoBehaviour {
 		level_manager = GameObject.Find ("GameController").GetComponent<LevelPackManager> ();
 		last_y_offset = -label_offset;
 		for (int i=0; i < level_manager.levelPacks.Count; i++) {
-			showPack(i);
+			if (level_manager.levelPacks[i].unlocked) 
+				showPack(i);
 		}
 		
 		RectTransform rect = GameObject.Find ("LevelSelectPanel").GetComponent<RectTransform> ();
@@ -58,7 +59,8 @@ public class LevelSelectFrame : MonoBehaviour {
 	public float getTotalHeight() {
 		float size = label_offset;
 		for (int i = 0; i < level_manager.levelPacks.Count; i++) {
-			size += getPackHeight (level_manager.levelPacks[i]);
+			if (level_manager.levelPacks[i].unlocked)
+				size += getPackHeight (level_manager.levelPacks[i]);
 		}
 		return size;
 	}   

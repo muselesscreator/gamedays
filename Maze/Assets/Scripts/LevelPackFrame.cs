@@ -49,14 +49,14 @@ public class LevelPackFrame : MonoBehaviour {
 		}
 		for (int i = 0; i < numLevels; i++) {
 			GameObject newLevel = GameObject.Instantiate(level_template) as GameObject;
+			if (i < myPack.last_cleared_level)
+				newLevel.GetComponent<LevelSelector>().active = true;
+			if (i <= myPack.last_cleared_level) 
+				newLevel.GetComponent<LevelSelector>().unlocked = true;
 			newLevel.transform.parent = transform.FindChild ("Levels").transform;
 			newLevel.GetComponent<LevelSelector>().initialize(this, i);
 		}
-		Debug.Log ("?????");
-		Debug.Log (myPack);
-		Debug.Log (myPack.planet);
-
-		GameObject planet = GameObject.Instantiate (myPack.planet) as GameObject;
+		GameObject planet = GameObject.Instantiate (manager.Planets[myPack.pack_num]) as GameObject;
 		planet.transform.parent = transform;
 		planet.transform.localScale = Vector3.one * 8f;
 		planet.transform.localPosition = new Vector3 (310, getPackHeight()-50, -10);

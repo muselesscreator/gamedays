@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b8ac3352a0845543aa4d50f32d69fb6
+guid: edef111784db54eae9d3bc9fb025bbae
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -8,6 +8,9 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: tile_06
+    7400000: tile_06|tile_exit.001Action
+    7400002: tile_06|tile_exit.002Action
+    7400004: tile_06|tile_exitAction
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -28,7 +31,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .949999988
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
