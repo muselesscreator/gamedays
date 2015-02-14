@@ -4,7 +4,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UniSave;
 
 [System.Serializable]
 public class PanelMaterials {
@@ -107,7 +106,6 @@ public class Board : MonoBehaviour {
 		Debug.Log (next);
 		if (ApplicationModel.pack.last_cleared_level < level) {
 			ApplicationModel.pack.last_cleared_level = level;
-			manager.Save ();
 		}
 
 		if (next == null) {

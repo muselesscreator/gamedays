@@ -22,7 +22,6 @@ public class LevelPackManagerEditor : Editor
 
 		if (addingLevelPack) {
 			currentID = EditorGUILayout.IntField("Level Pack ID", currentID);
-			currentPlanet = EditorGUILayout.ObjectField("Planet", currentPlanet, typeof(GameObject)) as GameObject;
 			currentPanel = EditorGUILayout.ObjectField("Panel", currentPanel, typeof(GameObject)) as GameObject;
 			currentName = EditorGUILayout.TextField("Name", currentName);
 			
