@@ -1,22 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor\LevelPackManagerEditor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIButton.cs">
     <Files>
-      <File FileName="Assets\Scripts\LevelPackManager.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\LevelPackFrame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelSelector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Panel.cs" Line="1" Column="1" />
-      <File FileName="Assets\ApplicationModel\ApplicationModel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PathLight.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DoNotDestroy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Board.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MazeAudio.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelPack.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelSelectFrame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TouchPlanet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Editor\LevelPackEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Editor\LevelPackManagerEditor.cs" Line="37" Column="2" />
+      <File FileName="Assets/quickScriptsKelsey/soundOnOffGraphic.js" Line="18" Column="3" />
+      <File FileName="Assets/quickScriptsKelsey/tempLoading.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UIButton.cs" Line="16" Column="36" />
+      <File FileName="Assets/Scripts/Board.cs" Line="208" Column="55" />
+      <File FileName="Assets/Scripts/Panel.cs" Line="218" Column="53" />
+      <File FileName="Assets/Scripts/Player.cs" Line="40" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

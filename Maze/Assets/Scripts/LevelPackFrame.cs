@@ -44,14 +44,18 @@ public class LevelPackFrame : MonoBehaviour {
 
 		resize ();
 
+		int last_cleared = 0;
+		if (PlayerPrefs.HasKey("Pack_" + myPack.name + "_last_cleared")) {
+			last_cleared = PlayerPrefs.GetInt ("Pack_" + myPack.name + "_last_cleared");
+		}
 		for (int i=0; i < manager.levelPacks.Count; i++) {
 			LevelPack pack = manager.levelPacks[i];
 		}
 		for (int i = 0; i < numLevels; i++) {
 			GameObject newLevel = GameObject.Instantiate(level_template) as GameObject;
-			if (i < myPack.last_cleared_level)
+			if (i < last_cleared)
 				newLevel.GetComponent<LevelSelector>().active = true;
-			if (i <= myPack.last_cleared_level) 
+			if (i <= last_cleared) 
 				newLevel.GetComponent<LevelSelector>().unlocked = true;
 			newLevel.transform.parent = transform.FindChild ("Levels").transform;
 			newLevel.GetComponent<LevelSelector>().initialize(this, i);

@@ -65,7 +65,7 @@ public class LevelSelector : MonoBehaviour {
 		if (unlocked) {
 			ApplicationModel.setTemplate (template);
 			ApplicationModel.setPack (parent.myPack);
-			Application.LoadLevel (1);
+			Application.LoadLevel ("Maze");
 		}
 	}
 

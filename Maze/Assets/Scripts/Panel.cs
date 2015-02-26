@@ -215,7 +215,7 @@ public class Panel : MonoBehaviour {
 		Destroy (myTile);
 		myTile = GameObject.Instantiate (manager.Panels.Where (p => p.name=="exitTile").ElementAt(0)) as GameObject;
 		myTile.transform.parent = transform;
-		myTile.transform.localPosition = new Vector3(0, .5f, 0);
+		myTile.transform.localPosition = new Vector3(0, -1.5f, 0);
 		theBoard.endTile.placed = true;
 		theBoard.endTile.position = position;
 		myKey = -1;

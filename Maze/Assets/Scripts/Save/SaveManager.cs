@@ -17,7 +17,11 @@ public class SaveManager : MonoBehaviour {
 	}
 
 	public void Save() {
-		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream fs = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.OpenOrCreate);
+		PlayerPrefs.SetInt ("FirstInt", 12);
+		PlayerPrefs.Save();
+	}
+
+	public void Load() {
+		Debug.Log (PlayerPrefs.GetInt ("FirstInt"));
 	}
 }

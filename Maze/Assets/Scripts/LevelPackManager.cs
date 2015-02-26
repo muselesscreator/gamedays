@@ -66,10 +66,3 @@ public class LevelPackManager : MonoBehaviour {
 	
 }
 
-[Serializable]
-class PackData
-{
-	public int[] unlocked_packs;
-	public int[] last_unlocked_level;
-}
-

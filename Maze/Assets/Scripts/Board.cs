@@ -104,8 +104,11 @@ public class Board : MonoBehaviour {
 		Debug.Log (fn);
 		BoardTemplate next = Resources.Load (fn) as BoardTemplate;
 		Debug.Log (next);
-		if (ApplicationModel.pack.last_cleared_level < level) {
-			ApplicationModel.pack.last_cleared_level = level;
+		string saveKey = "Pack_" + ApplicationModel.pack.name + "_last_cleared";
+		if (PlayerPrefs.GetInt (saveKey) < level) {
+			PlayerPrefs.SetInt (saveKey, level);
+			PlayerPrefs.Save ();
+			Debug.Log (PlayerPrefs.GetInt (saveKey));
 		}
 
 		if (next == null) {
@@ -113,7 +116,7 @@ public class Board : MonoBehaviour {
 			foreach (GameObject thisPanel in panels) {
 				DestroyImmediate (thisPanel);
 			}
-			Application.LoadLevel (2); 
+			Application.LoadLevel ("LevelSelect"); 
 			return;
 		}
 		Debug.Log (next);
@@ -202,6 +205,7 @@ public class Board : MonoBehaviour {
 
 	void GenBoard() {
 		myTemplate = ApplicationModel.template;
+		GameObject.Destroy (GameObject.Find ("StartAudio"));
 
 		Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera> ();
 		int max_axis = Math.Max (myTemplate.m_width, myTemplate.m_height);
@@ -225,7 +229,7 @@ public class Board : MonoBehaviour {
 		Destroy (GameObject.Find ("planet"));
 		GameObject planet = GameObject.Instantiate (manager.Planets[ApplicationModel.pack.pack_num]) as GameObject;
 		planet.name = "planet";
-		planet.transform.position = new Vector3 (-1.5f, 0f, 12);
+		planet.transform.position = new Vector3 (-1.5f, 0f, 20);
 
 		thePlayer = GameObject.Find ("sammy").GetComponent<Player> ();
 
