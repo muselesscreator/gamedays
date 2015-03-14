@@ -10,11 +10,16 @@ public class Player : MonoBehaviour {
 	public Vector2 position = new Vector2(0, 0);
 	public Board theBoard;
 	public bool isWalking = false;
+
+	public Vector3 startPosition;
 	public Vector3 targetPosition;
+
 	Animator anim;
 	public float speed;
 	public float startTime;
 	public float journeyLength;
+
+	public float currentLerpTime;
 
 	// true if we are currently selecting a path
 	public bool selecting;
@@ -128,13 +133,13 @@ public class Player : MonoBehaviour {
 
 
 	public void moveToNext() {
+		currentLerpTime = 0f;
 		Debug.Log ("MoveToNext " + moveIndex + " " + tmp_path.ToString ());
 		Vector2 newPosition = tmp_path[moveIndex];
 		startTime = Time.time;
 
 		transform.localRotation = theBoard.getPanel (position).pathLight.transform.localRotation;
 
-		// Actually Walking!
 		isWalking = true;
 		anim.SetBool("isWalking", true);
 
@@ -148,6 +153,7 @@ public class Player : MonoBehaviour {
 			theBoard.getPanel (position).lightUp ();
 		}
 		Vector2 xyPos = theBoard.ToXY ((int) newPosition.x, (int) newPosition.y);
+		startPosition = transform.localPosition;
 		targetPosition = new Vector3(xyPos.x, 0, xyPos.y);
 	}
 
@@ -206,9 +212,14 @@ public class Player : MonoBehaviour {
 				}
 			}
 			else {
-				float distCovered = (Time.time - startTime) * speed;
-				float fracJourney = distCovered / theBoard.size;
-				transform.localPosition = Vector3.Lerp (transform.localPosition, targetPosition, fracJourney);
+				float len = 1/speed;
+				currentLerpTime += Time.deltaTime;
+				if (currentLerpTime > len) {
+					currentLerpTime = len;
+				}
+
+				float fracJourney = currentLerpTime / len;
+				transform.localPosition = Vector3.Lerp (startPosition, targetPosition, fracJourney);
 			}
 			
 		}

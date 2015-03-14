@@ -18,6 +18,6 @@ public class TouchPlanet : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		Application.LoadLevel (0);
+		Application.LoadLevel ("LevelSelect");
 	}
 }

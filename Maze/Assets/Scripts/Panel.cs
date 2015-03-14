@@ -154,6 +154,10 @@ public class Panel : MonoBehaviour {
 					thePlayer.retraceTo(position);
 				}
 			}
+			else if(!thePlayer.selected && !thePlayer.isWalking && thePlayer.position == position) { 
+				thePlayer.selecting = true;
+				thePlayer.selected = false;
+			}
 			/*
 			if (Vector2.Distance (position, thePlayer.position) ==1 ) {
 				Vector2 movement = position - thePlayer.position;
@@ -165,6 +169,8 @@ public class Panel : MonoBehaviour {
 
 	void OnMouseOver() {
 		if (Input.GetMouseButton(0) && !thePlayer.isWalking) {
+			if (thePlayer.tmp_path.Count < 2 && position == thePlayer.position) 
+				return;
 			if (thePlayer.lastSelected == position) 
 				return;
 			if (thePlayer.canReach(position) && thePlayer.selecting) {

@@ -116,7 +116,7 @@ public class Board : MonoBehaviour {
 			foreach (GameObject thisPanel in panels) {
 				DestroyImmediate (thisPanel);
 			}
-			Application.LoadLevel ("LevelSelect"); 
+			Application.LoadLevel ("planetTap"); 
 			return;
 		}
 		Debug.Log (next);
