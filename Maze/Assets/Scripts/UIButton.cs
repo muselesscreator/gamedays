@@ -16,8 +16,6 @@ public class UIButton : MonoBehaviour {
 	private Image myImage;
 	// Use this for initialization
 	void Start () {
-		Sammy = GameObject.Find("sammy").GetComponent<Player>();
-		SammyAnim = GameObject.Find ("sammy").GetComponent<Animator>();
 		myImage = transform.FindChild ("Image").GetComponent<Image>();
 		if (myImage.sprite == SoundOnSprite && AudioListener.volume == 0) {
 			myImage.sprite = SoundOffSprite;
@@ -49,6 +47,8 @@ public class UIButton : MonoBehaviour {
 	}
 
 	public void SpeedUp() {
+		Sammy = GameObject.Find("sammy").GetComponent<Player>();
+		SammyAnim = GameObject.Find ("sammy").GetComponent<Animator>();
 		if (myImage.sprite == HurrySprite) {
 			myImage.sprite = HurryingSprite;
 			SammyAnim.SetBool("superSpeed", true);
