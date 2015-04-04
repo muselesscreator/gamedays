@@ -39,6 +39,8 @@ public class Player : MonoBehaviour {
 	Vector3 down = new Vector3 (0, 0, 90);
 	Vector3 right = new Vector3 (90, 0, 0);
 
+	public AudioSource teleportSound;
+
 	// Use this for initialization
 	
 	void Awake () {
@@ -137,9 +139,14 @@ public class Player : MonoBehaviour {
 		Debug.Log ("MoveToNext " + moveIndex + " " + tmp_path.ToString ());
 		Vector2 newPosition = tmp_path[moveIndex];
 		startTime = Time.time;
-
 		transform.localRotation = theBoard.getPanel (position).pathLight.transform.localRotation;
-
+		Debug.Log (position.ToString());
+		Debug.Log (transform.localRotation);
+		if (retracing) {
+			transform.localRotation = theBoard.getPanel (newPosition).pathLight.transform.localRotation;
+			transform.localRotation = Quaternion.Euler (transform.localRotation.eulerAngles + new Vector3(0, 180, 0));
+		}
+		Debug.Log (transform.localRotation.eulerAngles);
 		isWalking = true;
 		anim.SetBool("isWalking", true);
 
@@ -189,6 +196,7 @@ public class Player : MonoBehaviour {
 					isWalking = false;
 					anim.SetBool("isWalking", false);
 					if (position == theBoard.endTile.position) {
+						teleportSound.Play ();
 						theBoard.teleport();
 					}
 					for (int i=1; i<tmp_path.Count; i++) {
