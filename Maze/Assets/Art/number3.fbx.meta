@@ -11,7 +11,10 @@ ModelImporter:
     400002: numberArmature
     400004: numberArmature|Bone
     400006: numberThree
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: numberThree
+    4300002: number3
     7400000: numberAction01
     7400002: numberAction02
     7400004: numberAction03
@@ -30,6 +33,9 @@ ModelImporter:
     7400030: numberThree|tile_exit.001Action
     7400032: numberThree|tile_exit.002Action
     7400034: numberThree|tile_exitAction
+    7400036: number3|tile_exit.001Action
+    7400038: number3|tile_exit.002Action
+    7400040: number3|tile_exitAction
     9500000: //RootNode
     13700000: numberThree
   materials:

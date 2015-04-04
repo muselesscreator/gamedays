@@ -47,6 +47,7 @@ public class Panel : MonoBehaviour {
 		if (numPanel != null) {
 			numPanel.transform.Rotate (new Vector3(0, 5, 0));
 		}
+		Debug.Log (teleport_time);
 		if (teleport_time > 0 && Time.time > teleport_time) {
 			theBoard.nextLevel();
 		}

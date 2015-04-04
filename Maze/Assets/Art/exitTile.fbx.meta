@@ -12,6 +12,27 @@ ModelImporter:
     100012: tile_exit.001
     100014: tile_exit.002
     100016: tile_exit.003
+    100018: Armature
+    100020: Armature|Bone
+    100022: Cube
+    100024: exitRig
+    100026: glass
+    100028: numberFive
+    100030: numberFour
+    100032: numberOne
+    100034: numberSeven
+    100036: numberSix
+    100038: numberThree
+    100040: numberTwo
+    100042: steel
+    100044: tile_00
+    100046: tile_01
+    100048: tile_02
+    100050: tile_03
+    100052: tile_04
+    100054: tile_05
+    100056: tile_06
+    100058: tile_07
     400000: exitRig|center
     400002: exitRig|centerBit
     400004: exitRig|innerRing
@@ -21,18 +42,93 @@ ModelImporter:
     400012: tile_exit.001
     400014: tile_exit.002
     400016: tile_exit.003
+    400018: Armature
+    400020: Armature|Bone
+    400022: Cube
+    400024: exitRig
+    400026: glass
+    400028: numberFive
+    400030: numberFour
+    400032: numberOne
+    400034: numberSeven
+    400036: numberSix
+    400038: numberThree
+    400040: numberTwo
+    400042: steel
+    400044: tile_00
+    400046: tile_01
+    400048: tile_02
+    400050: tile_03
+    400052: tile_04
+    400054: tile_05
+    400056: tile_06
+    400058: tile_07
     2300000: tile_exit
     2300002: tile_exit.001
     2300004: tile_exit.002
     2300006: tile_exit.003
+    2300008: Cube
+    2300010: glass
+    2300012: numberFive
+    2300014: numberFour
+    2300016: numberOne
+    2300018: numberSeven
+    2300020: numberSix
+    2300022: numberThree
+    2300024: numberTwo
+    2300026: steel
+    2300028: tile_00
+    2300030: tile_01
+    2300032: tile_02
+    2300034: tile_03
+    2300036: tile_04
+    2300038: tile_05
+    2300040: tile_06
+    2300042: tile_07
     3300000: tile_exit
     3300002: tile_exit.001
     3300004: tile_exit.002
     3300006: tile_exit.003
+    3300008: Cube
+    3300010: glass
+    3300012: numberFive
+    3300014: numberFour
+    3300016: numberOne
+    3300018: numberSeven
+    3300020: numberSix
+    3300022: numberThree
+    3300024: numberTwo
+    3300026: steel
+    3300028: tile_00
+    3300030: tile_01
+    3300032: tile_02
+    3300034: tile_03
+    3300036: tile_04
+    3300038: tile_05
+    3300040: tile_06
+    3300042: tile_07
     4300000: tile_exit
     4300002: tile_exit.003
     4300004: tile_exit.002
     4300006: tile_exit.001
+    4300008: numberSeven
+    4300010: numberSix
+    4300012: numberFive
+    4300014: numberFour
+    4300016: numberThree
+    4300018: numberTwo
+    4300020: tile_07
+    4300022: numberOne
+    4300024: tile_05
+    4300026: tile_06
+    4300028: tile_04
+    4300030: tile_03
+    4300032: tile_01
+    4300034: tile_02
+    4300036: tile_00
+    4300038: Cube
+    4300040: glass
+    4300042: steel
     7400000: exitIdle
     7400002: exitTeleport
     7400004: exitRig|exitIdle

@@ -56,7 +56,7 @@ public class LevelSelector : MonoBehaviour {
 			GetComponentInChildren<MeshRenderer>().materials = mats;	
 		}
 		if (unlocked) {
-			GetComponentInChildren<ParticleSystem>().emissionRate = 70;
+			GetComponentInChildren<ParticleSystem>().enableEmission = true;
 		}
 	}
 
