@@ -9,9 +9,15 @@ public class UIButton : MonoBehaviour {
 	public Sprite SoundOffSprite;
 	public Sprite HurrySprite;
 	public Sprite HurryingSprite;
+	public Sprite ToVertical;
+	public Sprite FromVertical;
 
 	public Player Sammy;
 	public Animator SammyAnim;
+	public GameObject MyCamera;
+	public GameObject VertCamera;
+	public GameObject OffVertCamera;
+	public Board theBoard;
 
 	private Image myImage;
 	// Use this for initialization
@@ -60,4 +66,31 @@ public class UIButton : MonoBehaviour {
 			Sammy.speed = 3;
 		}
 	}
+
+	public void GoToVertical() {
+		MyCamera = GameObject.Find ("Main Camera");
+		VertCamera = GameObject.Find ("VertCamera");
+		OffVertCamera = GameObject.Find ("OffVertCamera");
+		theBoard = GameObject.Find ("GameController").GetComponent<Board> ();
+
+		if (myImage.sprite == ToVertical) {
+			myImage.sprite = FromVertical;
+			theBoard.isVertical = true;
+			MyCamera.transform.parent = VertCamera.transform;
+			foreach (GameObject sign in theBoard.signs) {
+				sign.SetActive(false);
+			}
+		}
+		else {
+			myImage.sprite = ToVertical;
+			theBoard.isVertical = false;
+			MyCamera.transform.parent = OffVertCamera.transform;
+			foreach (GameObject sign in theBoard.signs) {
+				sign.SetActive(true);
+			}
+		}
+		MyCamera.transform.localPosition = Vector3.zero;
+		MyCamera.transform.localRotation = Quaternion.identity;
+	}
+
 }

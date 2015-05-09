@@ -57,7 +57,7 @@ public class LevelPackFrame : MonoBehaviour {
 				newLevel.GetComponent<LevelSelector>().active = true;
 			if (i <= last_cleared) 
 				newLevel.GetComponent<LevelSelector>().unlocked = true;
-			newLevel.transform.parent = transform.FindChild ("Levels").transform;
+			newLevel.transform.SetParent(transform.FindChild ("Levels").transform, false);
 			newLevel.GetComponent<LevelSelector>().initialize(this, i);
 		}
 		GameObject planet = GameObject.Instantiate (manager.Planets[myPack.pack_num]) as GameObject;

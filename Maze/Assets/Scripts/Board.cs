@@ -65,16 +65,21 @@ public class Board : MonoBehaviour {
 	public bool addObstacle;
 	public bool removeObstacle;
 
+	public bool isVertical = false;
+
 	public GameObject panel;
 	public PanelMaterials materials;
 	public GameObject[,] theBoard;
 	public Player thePlayer;
 	public LevelPackManager manager;
 
+	public GameObject[] signs;
+
 
 	// Use this for initialization
 	void Start () {
 		manager = GetComponent<LevelPackManager> ();
+		isVertical = false;
 		if (boardInstance == null)
 		{
 			boardInstance = this;
@@ -109,6 +114,7 @@ public class Board : MonoBehaviour {
 			PlayerPrefs.SetInt (saveKey, level);
 			PlayerPrefs.Save ();
 			Debug.Log (PlayerPrefs.GetInt (saveKey));
+			manager.levelPacks.Where (p => p.name == ApplicationModel.pack.name).ElementAt(0).last_cleared_level = level;
 		}
 
 		if (next == null) {
@@ -205,10 +211,24 @@ public class Board : MonoBehaviour {
 
 	void GenBoard() {
 		myTemplate = ApplicationModel.template;
-		GameObject.Destroy (GameObject.Find ("StartAudio"));
 
+		GameObject.Destroy (GameObject.Find ("StartAudio"));
+		foreach (GameObject sign in GameObject.FindGameObjectsWithTag("sign")) {
+			GameObject.Destroy (sign);
+		}
+		signs = new GameObject[myTemplate.signs.Count ()];
+		for (int i=0; i<signs.Count (); i++) {
+			GameObject sign = GameObject.Instantiate (myTemplate.signs[i]) as GameObject;
+			signs[i] = sign;
+			if (isVertical) {
+				sign.SetActive(false);
+			}
+		}
 		Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera> ();
+		GameObject VertCam = GameObject.Find ("VertCamera");
+
 		int max_axis = Math.Max (myTemplate.m_width, myTemplate.m_height);
+
 		if (max_axis <= 4) {
 			cam.fieldOfView = 24;
 		}

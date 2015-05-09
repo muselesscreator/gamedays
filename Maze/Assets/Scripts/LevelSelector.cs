@@ -47,7 +47,7 @@ public class LevelSelector : MonoBehaviour {
 
 		if (active) {
 			Material[] mats = GetComponentInChildren<MeshRenderer>().materials;
-			if (template.name == "tile5") {
+			if (parent.myPack.tiles.name == "tile5") {
 				mats[0] = theBoard.materials.brightPanel;
 			}
 			else {
@@ -63,6 +63,7 @@ public class LevelSelector : MonoBehaviour {
 	void OnMouseDown() {
 		Debug.Log ("Clicked!");
 		if (unlocked) {
+			theBoard.isVertical = false;
 			ApplicationModel.setTemplate (template);
 			ApplicationModel.setPack (parent.myPack);
 			Application.LoadLevel ("Maze");

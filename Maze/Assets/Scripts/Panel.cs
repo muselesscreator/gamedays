@@ -26,6 +26,7 @@ public class Panel : MonoBehaviour {
 	public LevelPackManager manager;
 	public GameObject numPanel = null;
 	public float teleport_time = 0f;
+	public bool isVertical = false;
 
 
 	// Use this for initialization
@@ -45,7 +46,29 @@ public class Panel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (numPanel != null) {
-			numPanel.transform.Rotate (new Vector3(0, 5, 0));
+			if (isVertical) {
+				if (!theBoard.isVertical) {
+					Debug.Log ("Num Panel From Vertical");
+
+					numPanel.transform.localRotation = Quaternion.Euler (new Vector3(0, 0, 0));
+					numPanel.transform.localScale = new Vector3(1f, 6.667f, 1f);
+					numPanel.transform.localPosition = new Vector3(0f, 1.5f, 0f);
+
+					isVertical = false;
+				}
+			}
+			else {
+				if (theBoard.isVertical) {
+					Debug.Log ("Num Panel To Vertical");
+					isVertical = true;
+					numPanel.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 0));
+					numPanel.transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
+					numPanel.transform.localPosition = new Vector3(0f, 1.5f, -.58f);
+
+				}
+				numPanel.transform.Rotate (new Vector3(0, 5, 0));
+			}
+
 		}
 		if (teleport_time > 0 && Time.time > teleport_time) {
 			theBoard.nextLevel();

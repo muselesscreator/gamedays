@@ -32,6 +32,7 @@ public class BoardTemplate : ScriptableObject {
 	public List<Vector2> obstacles;
 	public NumPanel[] numPanels;
 	public EndTile endTile;
+	public GameObject[] signs;
 
 
 	// Use this for initialization

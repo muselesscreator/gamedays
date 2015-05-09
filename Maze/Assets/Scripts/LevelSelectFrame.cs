@@ -22,8 +22,12 @@ public class LevelSelectFrame : MonoBehaviour {
 	void Start() {
 		level_manager = GameObject.Find ("GameController").GetComponent<LevelPackManager> ();
 		last_y_offset = -label_offset;
-		for (int i=0; i < level_manager.levelPacks.Count; i++) {
+		for (int i=0; i < level_manager.levelPacks.Count -1; i++) {
 			showPack(i);
+		}
+		LevelPack preBonus = level_manager.levelPacks [level_manager.levelPacks.Count - 2];
+		if (preBonus.last_cleared_level == preBonus.levels.Count) {
+			showPack (level_manager.levelPacks.Count-1);
 		}
 		
 		RectTransform rect = GameObject.Find ("LevelSelectPanel").GetComponent<RectTransform> ();

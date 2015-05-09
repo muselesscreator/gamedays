@@ -26,6 +26,10 @@ public class LevelPackManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		foreach (LevelPack pack in levelPacks) {
+			string saveKey = "Pack_" + pack.name + "_last_cleared";
+			pack.last_cleared_level = PlayerPrefs.GetInt(saveKey);
+		}
 	}
 	
 	// Update is called once per frame
