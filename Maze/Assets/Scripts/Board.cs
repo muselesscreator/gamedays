@@ -87,6 +87,10 @@ public class Board : MonoBehaviour {
 		else {
 			Destroy(gameObject);
 		}
+		foreach (LevelPack pack in manager.levelPacks) {
+			string saveKey = "Pack_" + pack.name + "_last_cleared";
+			PlayerPrefs.SetInt (saveKey, pack.levels.Count);
+		}
 	}
 
 	public Vector2 ToXY(int i, int j) {
