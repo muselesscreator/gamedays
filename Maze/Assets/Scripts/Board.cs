@@ -89,7 +89,8 @@ public class Board : MonoBehaviour {
 		}
 		foreach (LevelPack pack in manager.levelPacks) {
 			string saveKey = "Pack_" + pack.name + "_last_cleared";
-			PlayerPrefs.SetInt (saveKey, pack.levels.Count);
+			//PlayerPrefs.SetInt (saveKey, 0);
+			//PlayerPrefs.SetInt (saveKey, pack.levels.Count);
 		}
 	}
 
@@ -232,21 +233,26 @@ public class Board : MonoBehaviour {
 		GameObject VertCam = GameObject.Find ("VertCamera");
 
 		int max_axis = Math.Max (myTemplate.m_width, myTemplate.m_height);
-
+		Debug.Log (cam.aspect);
 		if (max_axis <= 4) {
-			cam.fieldOfView = 24;
-		}
-		else if (max_axis == 5) {
+			//cam.fieldOfView = 24;
 			cam.fieldOfView = 32;
 		}
-		else if (max_axis == 6) {
+		else if (max_axis == 5) {
+			//cam.fieldOfView = 32;
 			cam.fieldOfView = 34;
 		}
-		else if (max_axis == 7) {
+		else if (max_axis == 6) {
+			//cam.fieldOfView = 34;
 			cam.fieldOfView = 38;
 		}
-		else if (max_axis == 8) {
+		else if (max_axis == 7) {
+			//cam.fieldOfView = 38;
 			cam.fieldOfView = 44;
+		}
+		else if (max_axis == 8) {
+			//cam.fieldOfView = 44;
+			cam.fieldOfView = 53;
 		}
 
 

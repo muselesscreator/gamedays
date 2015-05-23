@@ -27,7 +27,7 @@ public class LevelSelector : MonoBehaviour {
 
 
 		GameObject tile = GameObject.Instantiate (parent.myPack.tiles) as GameObject;
-		tile.transform.parent = transform;
+		tile.transform.SetParent(transform, false);
 		RectTransform rect = tile.GetComponent<RectTransform> ();
 		rect.anchoredPosition3D = new Vector3 (0, 0, -4.5f);
 		tile.transform.localRotation = Quaternion.Euler (new Vector3 (0, 180, 0));
@@ -60,7 +60,7 @@ public class LevelSelector : MonoBehaviour {
 		}
 	}
 
-	void OnMouseDown() {
+	void OnMouseUpAsButton() {
 		Debug.Log ("Clicked!");
 		if (unlocked) {
 			theBoard.isVertical = false;
